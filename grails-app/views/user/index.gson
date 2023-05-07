@@ -1,0 +1,25 @@
+import sun.security.User
+
+model {
+	Iterable<User> userList
+	Integer total
+	Integer max
+	Integer offset
+	Object search
+	String sort
+	String order
+}
+
+json {
+	data tmpl.user(userList ?: [])
+	total total
+	max max
+	offset offset
+	if (search != null) {
+		search search
+	}
+	sort sort
+	order order
+	responseCode OK.value()
+}
+

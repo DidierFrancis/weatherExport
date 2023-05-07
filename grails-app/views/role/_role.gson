@@ -1,0 +1,11 @@
+import sun.security.Role
+
+model {
+	Role role
+}
+
+json {
+	id role.id
+	authority role.authority
+	createdAt role.createdAt
+}

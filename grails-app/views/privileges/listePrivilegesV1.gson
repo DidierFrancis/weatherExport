@@ -1,0 +1,17 @@
+import sun.wheatherExport.Privileges
+
+model {
+	Iterable<Privileges> data
+	Integer total
+	Integer max
+	Integer offset
+}
+
+json {
+	data tmpl.privilegesV2(data ?: [])
+	total total
+	max max
+	offset offset
+	responseCode OK.value()
+}
+

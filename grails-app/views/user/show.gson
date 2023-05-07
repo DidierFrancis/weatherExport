@@ -1,0 +1,10 @@
+import sun.security.User
+
+model {
+    User user
+}
+
+json {
+    data tmpl.user(user)
+    responseCode OK.value()
+}

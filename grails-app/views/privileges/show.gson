@@ -1,0 +1,10 @@
+import sun.wheatherExport.Privileges
+
+model {
+	Privileges privileges
+}
+
+json {
+	data tmpl.privileges(privileges ?: [])
+	responseCode OK.value()
+}

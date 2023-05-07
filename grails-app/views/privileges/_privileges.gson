@@ -1,0 +1,17 @@
+import sun.wheatherExport.Privileges
+
+model {
+    Privileges privileges
+}
+
+json {
+    id privileges.id
+    libelle privileges.libelle
+    niveau privileges.niveau
+    code privileges.code
+    lien privileges.lien
+    icon privileges.icon
+    isMenu privileges.isMenu
+    createdAt privileges.createdAt
+    parent_id privileges.parent_id?.id
+}

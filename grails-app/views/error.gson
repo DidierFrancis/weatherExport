@@ -1,0 +1,6 @@
+response.status 500
+
+json {
+    message "Une Erreur non surveillée est survenue"
+    error 500
+}
