@@ -1,0 +1,18 @@
+import sun.security.User
+
+model {
+	User user
+}
+
+json {
+	id user.id
+	username user.username
+	firstName user.firstName
+	lastName user.lastName
+	displayName user.displayName
+	email user.email
+	telephone user.telephone
+	enabled user.enabled
+	hasPasswordUpdated user.hasPasswordUpdated
+	createdAt user.createdAt
+}

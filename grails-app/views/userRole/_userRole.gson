@@ -1,0 +1,11 @@
+import sun.security.UserRole
+
+model {
+	UserRole userRole
+}
+
+json {
+	role userRole.role.authority
+	username userRole.user.username
+	createdAt userRole.createdAt
+}

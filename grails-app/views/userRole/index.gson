@@ -1,0 +1,25 @@
+import sun.security.UserRole
+
+model {
+	Iterable<UserRole> userRoleList
+	Integer total
+	Integer max
+	Integer offset
+	Object search
+	String sort
+	String order
+}
+
+json {
+	data tmpl.userRole(userRoleList ?: [])
+	total total
+	max max
+	offset offset
+	if (search != null) {
+		search search
+	}
+	sort sort
+	order order
+	responseCode OK.value()
+}
+

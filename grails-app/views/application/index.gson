@@ -1,0 +1,14 @@
+json {
+    def langs = ['fr']
+    app {
+        name "SUN.WEATHER_EXPORT"
+        description "application de base"
+        auteur "Didier Francis Silomito TENDENG"
+        vesrion "1.0"
+        lang langs
+        development {
+            company "DFST Freelence"
+            email "didier.francis.tendeng@gmail.com"
+        }
+    }
+}

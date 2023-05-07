@@ -1,0 +1,23 @@
+import sun.exception.SaqException
+
+import static sun.exception.ExceptionUtils.errorsAsTabList
+
+/**
+ * Renders saqException
+ */
+model {
+    SaqException saqException
+}
+
+response.status saqException.code.startsWith('4') ? 400 : 500
+
+json {
+    responseCode saqException.code
+    cause {
+        code saqException.code
+        message saqException?.message
+        debugMessage saqException.debugMessage
+        erreurs saqException.errors == null ? [] : errorsAsTabList(saqException.errors)
+        exception saqException.exception == null ? null : saqException.exception?.message
+    }
+}

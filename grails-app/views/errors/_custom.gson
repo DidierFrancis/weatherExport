@@ -1,0 +1,19 @@
+/**
+ * Renders validation errors according to vnd.error: https://github.com/blongden/vnd.error
+ */
+/**
+ * Renders custom errors for app needs
+ */
+model {
+    Iterable<String> errors
+}
+
+response.status BAD_REQUEST
+
+json {
+    errors(errors) { String error ->
+        message error
+    }
+    total errors.size()
+    responseCode BAD_REQUEST.value()
+}

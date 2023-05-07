@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sample-jasper-plugin" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="3f4f987b-e61c-4b26-b893-67ddabe1c05b">
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="NOM" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["FRANC"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_PATH" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FILLIALE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["FRANC"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INSTITUTION" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["FRANC"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="POLICE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["FRANC"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CIVILITE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Monsieur"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PRODUIT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["FRANC"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SPECULATION" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MNT_REMBOURSEMENT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ZONE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INDICE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARTENAIRE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DATE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="184" y="0" width="152" height="86" uuid="823213ef-fc0d-4ab9-b345-2241106283f7"/>
+				<imageExpression><![CDATA[$P{LOGO_PATH}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="431" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="53" width="51" height="13" uuid="e78d452e-7b45-4580-ba37-5e1765ca2584">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[N° police : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="37" width="51" height="13" uuid="e0f39217-06bd-4df8-95fe-4b053dfa41a7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Institution:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="21" width="51" height="13" uuid="0e44532a-1b58-444c-87aa-36275308e498"/>
+				<text><![CDATA[Pays       :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="21" width="100" height="13" uuid="4e8ca72b-793f-46ff-9fff-f7bdb6f289f7"/>
+				<textFieldExpression><![CDATA[$P{FILLIALE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="37" width="100" height="13" uuid="ec89f7d3-7619-4464-99d8-606f4c08a7ab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{INSTITUTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="53" width="100" height="13" uuid="47bf99ab-f40d-499d-81a8-432241dbc155">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{POLICE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="440" y="21" width="100" height="30" uuid="83dfe607-3a73-4641-843d-cdf729107eaa"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="20" y="90" width="500" height="1" forecolor="#A3A3A3" uuid="ea8d5297-9a2d-4db3-b9df-99dc635b3b4f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="70" y="-47" width="389" height="30" uuid="628132a1-5f14-4cb2-9feb-a47a7dc9411a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOM}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="138" y="187" width="243" height="30" uuid="c03d601b-e04a-40b6-a31f-2bb5f5387ca7"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="146" width="65" height="20" uuid="40176500-3807-4da9-8e9f-4c3cb3f9d127"/>
+				<textFieldExpression><![CDATA[$P{CIVILITE}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="166" width="519" height="20" uuid="d827b98b-f712-495c-92e8-27e489723bd5"/>
+				<textFieldExpression><![CDATA["Nous vous informons pour le mois de "+$P{DATE}+" que vous devez a la "+$P{INSTITUTION}+" la somme de :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="192" width="155" height="20" uuid="91915793-d8a0-40e0-b6d5-3aa324915d9e"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MNT_REMBOURSEMENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="222" width="519" height="68" uuid="4d40a5d4-fb42-4df9-9285-b822156e7739"/>
+				<textFieldExpression><![CDATA["au titre du contrat "+$P{PRODUIT}+"avec le partenaire $P{PARTENAIRE} pour l'indice $P{INDICE}, la zone $P{ZONE} et la speculation $P{SPECULATION}. A verser dans les 5 jours apres réception de l'appel à cotisation "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="330" width="532" height="100" uuid="2eb75b34-d39f-42a6-98a2-0f7e9f7aa916"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Inclusive Guarantee FILIALE SENEGAL S.A. au Capital de 14.000.000 FCFA
+Sacré Cœur Pyrotechnique N° 40 Immeuble Elysée 3ème Etage N° 502 B.P 25 394 Dakar Fann - Tél. : + 221 33 864 54 55
+	R.C.CM : SN DKR 	2014 M 7601 N.I.N.E.A :004388791
+Courtier en assurance enregistré auprès de la direction des assurances agrément 000056/MEF/DA
+www.inclusiveguarantee.sn
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="160" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

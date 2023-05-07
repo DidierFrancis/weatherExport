@@ -1,0 +1,25 @@
+import sun.wheatherExport.Privileges
+
+model {
+	Iterable<Privileges> privilegesList
+	Integer total
+	Integer max
+	Integer offset
+	Object search
+	String order
+	String sort
+}
+
+json {
+	data tmpl.privileges(privilegesList ?: [])
+	total total
+	max max
+	offset offset
+	if (search != null) {
+		search search
+	}
+	sort sort
+	order order
+	responseCode OK.value()
+}
+

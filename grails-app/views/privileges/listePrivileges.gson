@@ -1,0 +1,70 @@
+import sun.wheatherExport.Privileges
+
+model {
+    Map<String, Iterable<Privileges>> data
+    Integer total
+    Integer max
+    Integer offset
+}
+
+json {
+    data(data.entrySet()) {
+        Map.Entry<String, Iterable<Privileges>> entry ->
+            privileges(entry.value) { Privileges privileges ->
+                id privileges.id
+                libelle privileges.libelle
+                niveau privileges.niveau
+                code privileges.code
+                lien privileges.lien
+                icon privileges.icon
+                isMenu privileges.isMenu
+                createdAt privileges.createdAt
+                parent_id privileges.parent_id?.id
+                selected true
+                children(privileges.privileges) { Privileges priv2 ->
+                    id priv2.id
+                    libelle priv2.libelle
+                    niveau priv2.niveau
+                    code priv2.code
+                    lien priv2.lien
+                    icon priv2.icon
+                    isMenu priv2.isMenu
+                    createdAt priv2.createdAt
+                    parent_id priv2.parent_id?.id
+                    selected true
+                    children(priv2.privileges) { Privileges priv3 ->
+                        id priv3.id
+                        libelle priv3.libelle
+                        niveau priv3.niveau
+                        code priv3.code
+                        lien priv3.lien
+                        icon priv3.icon
+                        isMenu priv3.isMenu
+                        createdAt priv3.createdAt
+                        parent_id priv3.parent_id?.id
+                        selected true
+                        children(priv3.privileges) { Privileges priv4 ->
+                            id priv4.id
+                            libelle priv4.libelle
+                            niveau priv4.niveau
+                            code priv4.code
+                            lien priv4.lien
+                            icon priv4.icon
+                            isMenu priv4.isMenu
+                            createdAt priv4.createdAt
+                            parent_id priv4.parent_id?.id
+                            selected true
+                            children priv4.privileges
+                        }
+
+                    }
+                }
+            }
+    }
+
+    total total
+    max max
+    offset offset
+    responseCode OK.value()
+}
+
